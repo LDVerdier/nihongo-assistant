@@ -1,8 +1,7 @@
 import {Cell} from './Cell'
 
-export const Grid = ({syllabary}) => {
-    //TODO kanaType should be dynamic
-    const kanaType = 'katakana';
+export const Grid = ({syllabary, kanaType}) => {
+;
     //collect the keys of each subobject of syllabary object
     const syllableSeriesKeys = Object.keys(syllabary);
 
@@ -34,13 +33,3 @@ export const Grid = ({syllabary}) => {
         </table>
     )
 }
-
-/*objectif : pour les séries défectives (ya yu yo par ex.)
-créer des cellules vides dans la colonne défective
-Solution 1 :
-const rowVowels = ['a','i','u','e','o'];
-dans les éléments tr ne pas boucler sur syllablesKeys mais sur rowVowels
-si la derniere lettre de la clé ka ki ku... est égale à rowVowel
-afficher <Cell syllable={syllable} />
-sinon afficher <Cell syllable={''} />
-*/
