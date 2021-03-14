@@ -27,6 +27,8 @@
 .translation{
     border: 1px black solid;
     height: 500px;
-    /* position: fixed; */
 }
 
+.social-network-link{
+    margin: 0 0.7em 0 0.7em;
+}

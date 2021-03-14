@@ -1,4 +1,5 @@
 import {Header} from './components/Header'
+import {Home} from './components/Home'
 import {Grid} from './components/Grid'
 import {Footer} from './components/Footer'
 // import {Translation} from './components/Translation'
@@ -261,10 +262,7 @@ function App() {
                 <Route path='/'
                 exact
                 render = {() => {
-                    return <div className="col-12 col-md-6 mx-auto text-center p-5">
-                    <h2>Bienvenue !</h2>
-                    <p>N'hésitez pas à consulter les tableaux de kana !</p>
-                    </div>
+                    return <Home />
                 }}
                 />
                 <Route path='/hiragana'
