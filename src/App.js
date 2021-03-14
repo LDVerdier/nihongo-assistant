@@ -1,6 +1,7 @@
 import {Header} from './components/Header'
 import {Grid} from './components/Grid'
 import {Footer} from './components/Footer'
+// import {Translation} from './components/Translation'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -229,7 +230,7 @@ function App() {
             },
         },    
         un : {
-            una: {
+            n: {
                 hiragana: 'ん',
                 katakana: 'ン'
             },
@@ -255,32 +256,35 @@ function App() {
   return (
     <Router>
             <Header />
-            <Route path='/'
-            exact
-            render = {() => {
-                return <div className="col-6 mx-auto text-center p-5">
-                <h2>Bienvenue !</h2>
-                <p>N'hésitez pas à consulter les tableaux de kana !</p>
-                </div>
-            }}
-            />
-            <Route path='/hiragana'
-            render = {() => {
-                return <Grid syllabary={syllabary} kanaType={'hiragana'}/>
-            }}
-            />
-            <Route path='/katakana'
-            render = {() => {
-                return <Grid syllabary={syllabary} kanaType={'katakana'}/>
-            }}
-            />
-            <Route path='/kanji'
-            render = {() => {
-                return <>
-                <h2>Page en construction...</h2>
-                </>
-            }}
-            />
+            <div className="container">
+
+                <Route path='/'
+                exact
+                render = {() => {
+                    return <div className="col-6 mx-auto text-center p-5">
+                    <h2>Bienvenue !</h2>
+                    <p>N'hésitez pas à consulter les tableaux de kana !</p>
+                    </div>
+                }}
+                />
+                <Route path='/hiragana'
+                render = {() => {
+                    return <Grid syllabary={syllabary} kanaType={'hiragana'}/>
+                }}
+                />
+                <Route path='/katakana'
+                render = {() => {
+                    return <Grid syllabary={syllabary} kanaType={'katakana'}/>
+                }}
+                />
+                <Route path='/kanji'
+                render = {() => {
+                    return <>
+                    <h2>Page en construction...</h2>
+                    </>
+                }}
+                />
+            </div>
             
             <Footer />
     </Router>

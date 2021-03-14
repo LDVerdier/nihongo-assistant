@@ -22,3 +22,13 @@
     font-size: 2em;
 }
 
+/* .grid-page{
+    position: relative;
+} */
+
+.translation{
+    border: 1px black solid;
+    height: 500px;
+    /* position: fixed; */
+}
+
