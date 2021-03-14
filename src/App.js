@@ -261,7 +261,7 @@ function App() {
                 <Route path='/'
                 exact
                 render = {() => {
-                    return <div className="col-6 mx-auto text-center p-5">
+                    return <div className="col-12 col-md-6 mx-auto text-center p-5">
                     <h2>Bienvenue !</h2>
                     <p>N'hésitez pas à consulter les tableaux de kana !</p>
                     </div>

@@ -6,9 +6,9 @@ export const Grid = ({syllabary, kanaType}) => {
     const syllableSeriesKeys = Object.keys(syllabary);
 
     return (
-        <div className="mx-auto my-5 col-6">
-            <p>Double-cliquez sur une case pour afficher la prononciation !</p>
-            <table >
+        <div className="mx-auto my-5 col-12 col-md-6">
+            <p className="text-center">Double-cliquez sur une case pour afficher la prononciation !</p>
+            <table className="mx-auto">
                 <tbody>
                     {
                         //for each serie key (vowels, k, s...)
