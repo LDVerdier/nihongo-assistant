@@ -8,25 +8,30 @@ export const Grid = ({syllabary}) => {
 
     return (
         <table>
-            {
-                //for each family key (vowel, k, s...)
-            syllablesFamiliesKeys.map(function(syllablesFamilyKey) { 
-                //collect the syllables keys (a, i u, e, o)
-                const syllablesKeys  = Object.keys(syllabary[syllablesFamilyKey]);
-                //and return a table row
-                return (
-                    <tr>
-                        {
-                            //for each syllable key (a i u e o)
-                            syllablesKeys.map(function(syllableKey){
-                                //return a Cell (<td> element) with the 
-                                return <Cell syllable={syllabary[syllablesFamilyKey][syllableKey][kanaType]} />
-                            })
-                        }
-                    </tr>
-                    )
-                })
-            }
+            <tbody>
+                {
+                    //for each family key (vowel, k, s...)
+                    syllablesFamiliesKeys.map(function(syllablesFamilyKey) { 
+                    //collect the syllables keys (a, i u, e, o)
+                    const syllablesKeys  = Object.keys(syllabary[syllablesFamilyKey]);
+                    //and return a table row
+                    return (
+                        <tr>
+                            {
+                                //for each syllable key (a i u e o)
+                                syllablesKeys.map((syllableKey) => {
+                                    // console.log(syllabary[syllablesFamilyKey][syllableKey]);
+                                    //return a Cell (<td> element) with the proper kana to display
+                                    // return <Cell syllable={syllabary[syllablesFamilyKey][syllableKey][kanaType]} />
+                                    return <Cell syllable={syllabary[syllablesFamilyKey][syllableKey]} />
+                                })
+                            }
+                        </tr>
+                        )
+                    })
+                }
+            
+            </tbody>
         </table>
     )
 }
