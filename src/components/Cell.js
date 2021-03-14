@@ -1,9 +1,7 @@
 
-
 export const Cell = ({ syllable }) => {
-    console.log(syllable);
     return (
-        <td className="cell">
+        <td className={"cell " + (syllable ? '' : 'empty')}>
             {syllable}
         </td>
     )
