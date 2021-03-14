@@ -1,10 +1,10 @@
 
 
-export const Cell = (props) => {
-    // console.log(caractere)
+export const Cell = ({ syllable }) => {
+    console.log(syllable);
     return (
         <td className="cell">
-            {props.hiragana}
+            {syllable}
         </td>
     )
 };

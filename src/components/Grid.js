@@ -2,7 +2,7 @@ import {Cell} from './Cell'
 
 export const Grid = ({syllabary}) => {
 
-    const kanaType = 'katakana';
+    const kanaType = 'hiragana';
 
     const syllablesFamiliesKeys = Object.keys(syllabary);
 
@@ -11,19 +11,19 @@ export const Grid = ({syllabary}) => {
             <tbody>
                 {
                     //for each family key (vowel, k, s...)
-                    syllablesFamiliesKeys.map(function(syllablesFamilyKey) { 
+                    syllablesFamiliesKeys.map((syllablesFamilyKey, index) => { 
                     //collect the syllables keys (a, i u, e, o)
                     const syllablesKeys  = Object.keys(syllabary[syllablesFamilyKey]);
                     //and return a table row
                     return (
-                        <tr>
+                        <tr key={index}>
                             {
                                 //for each syllable key (a i u e o)
-                                syllablesKeys.map((syllableKey) => {
-                                    // console.log(syllabary[syllablesFamilyKey][syllableKey]);
+                                syllablesKeys.map((syllableKey, index) => {
                                     //return a Cell (<td> element) with the proper kana to display
-                                    // return <Cell syllable={syllabary[syllablesFamilyKey][syllableKey][kanaType]} />
-                                    return <Cell syllable={syllabary[syllablesFamilyKey][syllableKey]} />
+                                    console.log(index);
+                                    const syllable = syllabary[syllablesFamilyKey][syllableKey][kanaType];
+                                    return <Cell key={index} syllable={syllable} />
                                 })
                             }
                         </tr>

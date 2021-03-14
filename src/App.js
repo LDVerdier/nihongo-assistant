@@ -51,6 +51,20 @@ function App() {
                 katakana: 'コ'
             },
         },
+        y : {
+            ya: {
+                hiragana: 'か',
+                katakana: 'カ'
+            },
+            yu: {
+                hiragana: 'く',
+                katakana: 'ク'
+            },
+            yo: {
+                hiragana: 'こ',
+                katakana: 'コ'
+            },
+        },
     };
 
   return (
