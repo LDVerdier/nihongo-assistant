@@ -1,20 +1,17 @@
 // import {Cell} from './Cell'
 import React from 'react';
-import Row from './Row';
+import Row from '../Row';
 
 const Grid = ({ syllabary, kanaType }) => {
   // console.log(syllabary, kanaType);
-  const rows = syllabary.map((kanaSerie, index) => {
-    // console.log('kanaSerie : ', kanaSerie);
-    return (
-      <Row key={index} kanaSerie={kanaSerie} />
-    );
-  });
+  const rows = syllabary.map(({id, syllables}) => (
+    <Row key={id} syllables={syllables} kanaType={kanaType} />
+  ));
   // console.log(rows);
   return (
-    <div className="grid">
+    <table className="grid border">
       {rows}
-    </div>
+    </table>
   );
 };
 

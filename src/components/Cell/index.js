@@ -1,13 +1,12 @@
-import React from 'react';
-import { useState } from 'react'
+import React, { useState } from 'react';
 
-const Cell = ({ pronunciation, hiragana, katakana, sound }) => {
-    console.log('');
-    return (
-        <div className="grid__cell">
-            {hiragana}
-        </div>
-    );
+const Cell = ({ symbol }) => {
+  // console.log(symbol);
+  return (
+    <td className="border">
+      { symbol }
+    </td>
+  );
 };
 
 // const Cell = ({ syllable, pronunciation }) => {

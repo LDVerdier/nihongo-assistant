@@ -1,19 +1,19 @@
-const syllabary = [
+export default [
   {
     id: 1,
     sound: 'vowels',
     syllables: [
       {
         id: 1,
-        hiragana: '',
-        katakana: '',
+        hiragana: 'あ',
+        katakana: 'ア',
         sound: 'a',
         pronunciation: 'a',
       },
       {
         id: 2,
-        hiragana: '',
-        katakana: '',
+        hiragana: 'い',
+        katakana: 'イ',
         sound: 'i',
         pronunciation: 'i',
       },
@@ -25,15 +25,15 @@ const syllabary = [
     syllables: [
       {
         id: 1,
-        hiragana: '',
-        katakana: '',
+        hiragana: 'か',
+        katakana: 'カ',
         sound: 'a',
         pronunciation: 'ka',
       },
       {
         id: 2,
-        hiragana: '',
-        katakana: '',
+        hiragana: 'き',
+        katakana: 'キ',
         sound: 'i',
         pronunciation: 'ki',
       },
@@ -52,9 +52,9 @@ const syllabary = [
 //     },
 //     {
 //       id: 2,
-//       pronunciation: 'i',
-//       hiragana: 'い',
-//       katakana: 'イ',
+      // pronunciation: 'i',
+      // hiragana: 'い',
+      // katakana: 'イ',
 //       sound: 'i'
 //     },
 //     {
