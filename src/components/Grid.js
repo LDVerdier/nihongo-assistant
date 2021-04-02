@@ -1,4 +1,5 @@
 // import {Cell} from './Cell'
+import React from 'react';
 import Row from './Row';
 
 const Grid = ({ syllabary, kanaType }) => {

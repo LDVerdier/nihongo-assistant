@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const Home = () => {
     return (
         <div className="col-12 col-md-6 mx-auto text-center p-5">

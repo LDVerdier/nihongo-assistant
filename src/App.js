@@ -1,10 +1,11 @@
+import React from 'react'
 import {Header} from './components/Header'
 import {Home} from './components/Home'
 import Grid from './components/Grid'
 import {Footer} from './components/Footer'
 // import {Translation} from './components/Translation'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import {syllabary} from './data/Syllabary';
 
 
