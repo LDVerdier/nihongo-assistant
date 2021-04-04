@@ -1,38 +1,35 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const Cell = ({ symbol }) => {
-  // console.log(symbol);
+const Cell = ({ symbol, pronunciation }) => {
+  const [hidePronunciation, setHidePronunciation] = useState(true);
+
+  const togglePronunciation = () => {
+    if (symbol !== '') {
+      setHidePronunciation(!hidePronunciation);
+    }
+  };
+
+  const displaySyllable = () => {
+    setTimeout(setHidePronunciation, 500, true);
+  };
+
   return (
-    <td className="border">
-      { symbol }
+    <td
+      className="border"
+      onDoubleClick={togglePronunciation}
+      onMouseLeave={displaySyllable}
+      //! gérer le style en CSS
+      style={{ cursor: symbol && 'pointer' }}
+    >
+      { hidePronunciation ? symbol : pronunciation}
     </td>
   );
 };
 
-// const Cell = ({ syllable, pronunciation }) => {
-//     const [hidePronunciation, setHidePronunciation] = useState(true);
-
-//     const togglePronunciation = () => {
-//         if(syllable !== ''){
-//             console.log('click on ' + syllable);
-//             setHidePronunciation(!hidePronunciation);
-//         }
-//     };
-
-//     const displaySyllable = () => {
-//         setTimeout(setHidePronunciation, 500, true)
-//         ;
-//     };
-//     return (
-//         <td className={"cell " + (syllable ? '' : 'empty')}
-//         onDoubleClick={togglePronunciation}
-//         onMouseLeave={displaySyllable}
-//         style={{cursor: syllable && 'pointer'}}
-//         >
-//             {hidePronunciation ? syllable : pronunciation} 
-//         </td>
-//     )
-// };
+Cell.propTypes = {
+  symbol: PropTypes.string.isRequired,
+  pronunciation: PropTypes.string.isRequired,
+};
 
 export default Cell;
-

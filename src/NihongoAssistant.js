@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Grid from './components/Grid';
 import Footer from './components/Footer';
-// import {Translation} from './components/Translation'
+
 import './assets/css/bootstrap.min.css';
 import syllabary from './data/Syllabary';
 

@@ -17,6 +17,27 @@ export default [
         sound: 'i',
         pronunciation: 'i',
       },
+      {
+        id: 3,
+        hiragana: 'う',
+        katakana: 'ウ',
+        sound: 'u',
+        pronunciation: 'u',
+      },
+      {
+        id: 4,
+        hiragana: 'え',
+        katakana: 'エ',
+        sound: 'e',
+        pronunciation: 'e',
+      },
+      {
+        id: 5,
+        hiragana: 'お',
+        katakana: 'オ',
+        sound: 'o',
+        pronunciation: 'o',
+      },
     ],
   },
   {
@@ -24,340 +45,381 @@ export default [
     sound: 'k',
     syllables: [
       {
-        id: 1,
+        id: 6,
         hiragana: 'か',
         katakana: 'カ',
         sound: 'a',
         pronunciation: 'ka',
       },
       {
-        id: 2,
+        id: 7,
         hiragana: 'き',
         katakana: 'キ',
         sound: 'i',
         pronunciation: 'ki',
       },
+      {
+        id: 8,
+        hiragana: 'く',
+        katakana: 'ク',
+        sound: 'u',
+        pronunciation: 'ku',
+      },
+      {
+        id: 9,
+        hiragana: 'け',
+        katakana: 'ケ',
+        sound: 'e',
+        pronunciation: 'ke',
+      },
+      {
+        id: 10,
+        hiragana: 'こ',
+        katakana: 'コ',
+        sound: 'o',
+        pronunciation: 'ko',
+      },
+    ],
+  },
+  {
+    id: 3,
+    sound: 's',
+    syllables: [
+      {
+        id: 11,
+        hiragana: 'さ',
+        katakana: 'サ',
+        sound: 'a',
+        pronunciation: 'sa',
+      },
+      {
+        id: 12,
+        hiragana: 'し',
+        katakana: 'シ',
+        sound: 'i',
+        pronunciation: 'shi',
+      },
+      {
+        id: 13,
+        hiragana: 'す',
+        katakana: 'ス',
+        sound: 'u',
+        pronunciation: 'su',
+      },
+      {
+        id: 14,
+        hiragana: 'せ',
+        katakana: 'セ',
+        sound: 'e',
+        pronunciation: 'se',
+      },
+      {
+        id: 15,
+        hiragana: 'そ',
+        katakana: 'ソ',
+        sound: 'o',
+        pronunciation: 'so',
+      },
+    ],
+  },
+  {
+    id: 4,
+    sound: 't',
+    syllables: [
+      {
+        id: 16,
+        hiragana: 'た',
+        katakana: 'タ',
+        sound: 'a',
+        pronunciation: 'ta',
+      },
+      {
+        id: 17,
+        hiragana: 'ち',
+        katakana: 'チ',
+        sound: 'i',
+        pronunciation: 'chi',
+      },
+      {
+        id: 18,
+        hiragana: 'つ',
+        katakana: 'ツ',
+        sound: 'u',
+        pronunciation: 'tsu',
+      },
+      {
+        id: 19,
+        hiragana: 'て',
+        katakana: 'テ',
+        sound: 'e',
+        pronunciation: 'te',
+      },
+      {
+        id: 20,
+        hiragana: 'と',
+        katakana: 'ト',
+        sound: 'o',
+        pronunciation: 'to',
+      },
+    ],
+  },
+  {
+    id: 5,
+    sound: 'n',
+    syllables: [
+      {
+        id: 21,
+        hiragana: 'な',
+        katakana: 'ナ',
+        sound: 'a',
+        pronunciation: 'na',
+      },
+      {
+        id: 22,
+        hiragana: 'に',
+        katakana: 'ニ',
+        sound: 'i',
+        pronunciation: 'ni',
+      },
+      {
+        id: 23,
+        hiragana: 'ぬ',
+        katakana: 'ヌ',
+        sound: 'u',
+        pronunciation: 'nu',
+      },
+      {
+        id: 24,
+        hiragana: 'ね',
+        katakana: 'ネ',
+        sound: 'e',
+        pronunciation: 'ne',
+      },
+      {
+        id: 25,
+        hiragana: 'の',
+        katakana: 'ノ',
+        sound: 'o',
+        pronunciation: 'no',
+      },
+    ],
+  },
+  {
+    id: 6,
+    sound: 'h',
+    syllables: [
+      {
+        id: 26,
+        hiragana: 'は',
+        katakana: 'ハ',
+        sound: 'a',
+        pronunciation: 'ha',
+      },
+      {
+        id: 27,
+        hiragana: 'ひ',
+        katakana: 'ヒ',
+        sound: 'i',
+        pronunciation: 'hi',
+      },
+      {
+        id: 28,
+        hiragana: 'ふ',
+        katakana: 'フ',
+        sound: 'u',
+        pronunciation: 'fu',
+      },
+      {
+        id: 29,
+        hiragana: 'へ',
+        katakana: 'ヘ',
+        sound: 'e',
+        pronunciation: 'he',
+      },
+      {
+        id: 30,
+        hiragana: 'ほ',
+        katakana: 'ホ',
+        sound: 'o',
+        pronunciation: 'ho',
+      },
+    ],
+  },
+  {
+    id: 7,
+    sound: 'm',
+    syllables: [
+      {
+        id: 31,
+        hiragana: 'ま',
+        katakana: 'マ',
+        sound: 'a',
+        pronunciation: 'ma',
+      },
+      {
+        id: 32,
+        hiragana: 'み',
+        katakana: 'ミ',
+        sound: 'i',
+        pronunciation: 'mi',
+      },
+      {
+        id: 33,
+        hiragana: 'む',
+        katakana: 'ム',
+        sound: 'u',
+        pronunciation: 'mu',
+      },
+      {
+        id: 34,
+        hiragana: 'め',
+        katakana: 'メ',
+        sound: 'e',
+        pronunciation: 'me',
+      },
+      {
+        id: 35,
+        hiragana: 'も',
+        katakana: 'モ',
+        sound: 'o',
+        pronunciation: 'mo',
+      },
+    ],
+  },
+  {
+    id: 8,
+    sound: 'y',
+    syllables: [
+      {
+        id: 36,
+        hiragana: 'や',
+        katakana: 'ヤ',
+        sound: 'a',
+        pronunciation: 'ya',
+      },
+      {
+        id: 37,
+        hiragana: '',
+        katakana: '',
+        sound: 'i',
+        pronunciation: '',
+      },
+      {
+        id: 38,
+        hiragana: 'ゆ',
+        katakana: 'ユ',
+        sound: 'u',
+        pronunciation: 'yu',
+      },
+      {
+        id: 39,
+        hiragana: '',
+        katakana: '',
+        sound: 'e',
+        pronunciation: '',
+      },
+      {
+        id: 40,
+        hiragana: 'よ',
+        katakana: 'ヨ',
+        sound: 'o',
+        pronunciation: 'yo',
+      },
+    ],
+  },
+  {
+    id: 9,
+    sound: 'r',
+    syllables: [
+      {
+        id: 41,
+        hiragana: 'ら',
+        katakana: 'ラ',
+        sound: 'a',
+        pronunciation: 'ra',
+      },
+      {
+        id: 42,
+        hiragana: 'り',
+        katakana: 'リ',
+        sound: 'i',
+        pronunciation: 'ri',
+      },
+      {
+        id: 43,
+        hiragana: 'る',
+        katakana: 'ル',
+        sound: 'u',
+        pronunciation: 'ru',
+      },
+      {
+        id: 44,
+        hiragana: 'れ',
+        katakana: 'レ',
+        sound: 'e',
+        pronunciation: 're',
+      },
+      {
+        id: 45,
+        hiragana: 'ろ',
+        katakana: 'ロ',
+        sound: 'o',
+        pronunciation: 'ro',
+      },
+    ],
+  },
+  {
+    id: 10,
+    sound: 'w',
+    syllables: [
+      {
+        id: 46,
+        hiragana: 'わ',
+        katakana: 'ワ',
+        sound: 'a',
+        pronunciation: 'wa',
+      },
+      {
+        id: 47,
+        hiragana: '',
+        katakana: '',
+        sound: 'i',
+        pronunciation: '',
+      },
+      {
+        id: 48,
+        hiragana: '',
+        katakana: '',
+        sound: 'u',
+        pronunciation: '',
+      },
+      {
+        id: 49,
+        hiragana: '',
+        katakana: '',
+        sound: 'e',
+        pronunciation: '',
+      },
+      {
+        id: 50,
+        hiragana: 'を',
+        katakana: 'ヲ',
+        sound: 'o',
+        pronunciation: 'wo',
+      },
+    ],
+  },
+  {
+    id: 11,
+    sound: 'special',
+    syllables: [
+      {
+        id: 51,
+        hiragana: 'ん',
+        katakana: 'ン',
+        sound: '',
+        pronunciation: '-n',
+      },
     ],
   },
 ];
-
-// export const syllabary = [
-//   [
-//     {
-//       id: 1,
-//       pronunciation: 'a',
-//       hiragana: 'あ',
-//       katakana: 'ア',
-//       sound: 'a'
-//     },
-//     {
-//       id: 2,
-      // pronunciation: 'i',
-      // hiragana: 'い',
-      // katakana: 'イ',
-//       sound: 'i'
-//     },
-//     {
-//       id: 3,
-//       pronunciation: 'u',
-//       hiragana: 'う',
-//       katakana: 'ウ',
-//       sound: 'u'
-//     },
-//     {
-//       id: 4,
-//       pronunciation: 'e',
-//       hiragana: 'え',
-//       katakana: 'エ',
-//       sound: 'e'
-//     },
-//     {
-//       id: 5,
-//       pronunciation: 'o',
-//       hiragana: 'お',
-//       katakana: 'オ',
-//       sound: 'o'
-//     },
-//   ],
-//   [{
-//       id: 6,
-//       pronunciation: 'ka',
-//       hiragana: 'か',
-//       katakana: 'カ',
-//       sound: 'a'
-//     },
-//     {
-//       id: 7,
-//       pronunciation: 'ki',
-//       hiragana: 'き',
-//       katakana: 'キ',
-//       sound: 'i'
-//     },
-//     {
-//       id: 8,
-//       pronunciation: 'ku',
-//       hiragana: 'く',
-//       katakana: 'ク',
-//       sound: 'u'
-//     },
-//     {
-//       id: 9,
-//       pronunciation: 'ke',
-//       hiragana: 'け',
-//       katakana: 'ケ',
-//       sound: 'e'
-//     },
-//     {
-//       id: 10,
-//       pronunciation: 'ko',
-//       hiragana: 'こ',
-//       katakana: 'コ',
-//       sound: 'o'
-//     },
-//   ],
-// ];
-
-// const syll = {
-//   vowels: {
-//     a: {
-//       hiragana: 'あ',
-//       katakana: 'ア'
-//     },
-//     i: {
-//       hiragana: 'い',
-//       katakana: 'イ'
-//     },
-//     u: {
-//       hiragana: 'う',
-//       katakana: 'ウ'
-//     },
-//     e: {
-//       hiragana: 'え',
-//       katakana: 'エ'
-//     },
-//     o: {
-//       hiragana: 'お',
-//       katakana: 'オ',
-//     },
-//   },
-//   k: {
-//     ka: {
-//       hiragana: 'か',
-//       katakana: 'カ',
-//     },
-//     ki: {
-//       hiragana: 'き',
-//       katakana: 'キ',
-//     },
-//     ku: {
-//       hiragana: 'く',
-//       katakana: 'ク',
-//     },
-//     ke: {
-//       hiragana: 'け',
-//       katakana: 'ケ',
-//     },
-//     ko: {
-//       hiragana: 'こ',
-//       katakana: 'コ',
-//     },
-//   },
-//   s: {
-//     sa: {
-//       hiragana: 'さ',
-//       katakana: 'サ'
-//     },
-//     shi: {
-//       hiragana: 'し',
-//       katakana: 'シ'
-//     },
-//     su: {
-//       hiragana: 'す',
-//       katakana: 'ス'
-//     },
-//     se: {
-//       hiragana: 'せ',
-//       katakana: 'セ'
-//     },
-//     so: {
-//       hiragana: 'そ',
-//       katakana: 'ソ'
-//     },
-//   },
-//   t: {
-//     ta: {
-//       hiragana: 'た',
-//       katakana: 'タ'
-//     },
-//     chi: {
-//       hiragana: 'ち',
-//       katakana: 'チ'
-//     },
-//     tsu: {
-//       hiragana: 'つ',
-//       katakana: 'ツ'
-//     },
-//     te: {
-//       hiragana: 'て',
-//       katakana: 'テ'
-//     },
-//     to: {
-//       hiragana: 'と',
-//       katakana: 'ト'
-//     },
-//   },
-//   n: {
-//     na: {
-//       hiragana: 'な',
-//       katakana: 'ナ'
-//     },
-//     ni: {
-//       hiragana: 'に',
-//       katakana: 'ニ'
-//     },
-//     nu: {
-//       hiragana: 'ぬ',
-//       katakana: 'ヌ'
-//     },
-//     ne: {
-//       hiragana: 'ね',
-//       katakana: 'ネ'
-//     },
-//     no: {
-//       hiragana: 'の',
-//       katakana: 'ノ'
-//     },
-//   },
-//   h: {
-//     ha: {
-//       hiragana: 'は',
-//       katakana: 'ハ'
-//     },
-//     hi: {
-//       hiragana: 'ひ',
-//       katakana: 'ヒ'
-//     },
-//     hu: {
-//       hiragana: 'ふ',
-//       katakana: 'フ'
-//     },
-//     he: {
-//       hiragana: 'へ',
-//       katakana: 'ヘ'
-//     },
-//     ho: {
-//       hiragana: 'ほ',
-//       katakana: 'ホ'
-//     },
-//   },
-//   m: {
-//     ma: {
-//       hiragana: 'ま',
-//       katakana: 'マ'
-//     },
-//     mi: {
-//       hiragana: 'み',
-//       katakana: 'ミ'
-//     },
-//     mu: {
-//       hiragana: 'む',
-//       katakana: 'ム'
-//     },
-//     me: {
-//       hiragana: 'め',
-//       katakana: 'メ'
-//     },
-//     mo: {
-//       hiragana: 'も',
-//       katakana: 'モ'
-//     },
-//   },
-//   y: {
-//     ya: {
-//       hiragana: 'や',
-//       katakana: 'ヤ'
-//     },
-//     yi: {
-//       hiragana: '',
-//       katakana: ''
-//     },
-//     yu: {
-//       hiragana: 'ゆ',
-//       katakana: 'ユ'
-//     },
-//     ye: {
-//       hiragana: '',
-//       katakana: ''
-//     },
-//     yo: {
-//       hiragana: 'よ',
-//       katakana: 'ヨ'
-//     },
-//   },
-//   r: {
-//     ra: {
-//       hiragana: 'ら',
-//       katakana: 'ラ'
-//     },
-//     ri: {
-//       hiragana: 'り',
-//       katakana: 'リ'
-//     },
-//     ru: {
-//       hiragana: 'る',
-//       katakana: 'ル'
-//     },
-//     re: {
-//       hiragana: 'れ',
-//       katakana: 'レ'
-//     },
-//     ro: {
-//       hiragana: 'ろ',
-//       katakana: 'ロ'
-//     },
-//   },
-//   w: {
-//     wa: {
-//       hiragana: 'わ',
-//       katakana: 'ワ'
-//     },
-//     wi: {
-//       hiragana: '',
-//       katakana: ''
-//     },
-//     wu: {
-//       hiragana: '',
-//       katakana: ''
-//     },
-//     we: {
-//       hiragana: '',
-//       katakana: ''
-//     },
-//     wo: {
-//       hiragana: 'を',
-//       katakana: 'ヲ'
-//     },
-//   },
-//   un: {
-//     n: {
-//       hiragana: 'ん',
-//       katakana: 'ン'
-//     },
-//     uni: {
-//       hiragana: '',
-//       katakana: ''
-//     },
-//     unu: {
-//       hiragana: '',
-//       katakana: ''
-//     },
-//     un: {
-//       hiragana: '',
-//       katakana: ''
-//     },
-//     uno: {
-//       hiragana: '',
-//       katakana: ''
-//     },
-//   },
-// };
