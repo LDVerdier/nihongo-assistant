@@ -18,5 +18,9 @@
     font-size: 2rem;
     height: 50px;
     width: 50px;
+
+    &--full {
+      cursor: pointer;
+    }
   }
 }
