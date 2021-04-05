@@ -1,0 +1,50 @@
+@use '../../styles/vars';
+
+.quiz {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem;
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: vars.$breakpoint-md) {
+    width: 50%;
+  }
+
+  &__title {
+    margin-bottom: 2.5rem;
+  }
+
+  &__options {
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__game {
+    width: 50%;
+    margin: 1rem auto;
+    border: 1px black solid;
+    padding: 1rem;
+
+    &__question {
+      border: 1px red solid;
+      margin-bottom: 1rem;
+      padding: 1rem;
+    }
+
+    &__answer-group {
+      border: 1px darkgreen solid;
+      padding: .5rem;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &__answer {
+      border: 1px chartreuse solid;
+      color: green;
+      padding: .5rem 1rem;
+    }
+  }
+}

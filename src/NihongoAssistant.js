@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import KanaGrid from './components/KanaGrid';
+import Quiz from './components/Quiz';
 import Footer from './components/Footer';
 
 import './assets/css/bootstrap.min.css';
@@ -35,6 +36,10 @@ function NihongoAssistant() {
               <h2>Page en construction...</h2>
             </>
           )}
+        />
+        <Route
+          path="/entrainement"
+          render={() => <Quiz syllabary={syllabary} />}
         />
       </div>
       <Footer />
