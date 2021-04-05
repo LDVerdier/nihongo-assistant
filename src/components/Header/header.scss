@@ -1,0 +1,15 @@
+@use '../../styles/vars';
+
+.header {
+  background-color: vars.$color-grey;
+
+  &__nav__link {
+    color: vars.$color-text-light;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+      color: vars.$color-text-light-alt;
+    }
+  }
+}

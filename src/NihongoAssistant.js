@@ -14,7 +14,7 @@ function NihongoAssistant() {
   return (
     <Router>
       <Header />
-      <div className="container main">
+      <div className="main">
         <Route
           path="/"
           exact
