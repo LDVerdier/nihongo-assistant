@@ -1,0 +1,22 @@
+.kanagrid {
+  margin: 0 auto;
+  padding: 2rem 0;
+  text-align: center;
+  // color: red;
+
+  &__helper {
+    margin-bottom: 2rem;
+  }
+
+  &__table {
+    margin: auto;
+  }
+
+  &__cell {
+    border: 1px lightgrey solid;
+    vertical-align: middle;
+    font-size: 2rem;
+    height: 50px;
+    width: 50px;
+  }
+}

@@ -16,7 +16,7 @@ const Cell = ({ symbol, pronunciation }) => {
 
   return (
     <td
-      className="border"
+      className="kanagrid__cell"
       onDoubleClick={togglePronunciation}
       onMouseLeave={displaySyllable}
       //! gérer le style en CSS

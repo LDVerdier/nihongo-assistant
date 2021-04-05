@@ -2,22 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Row from '../Row';
+import './kanagrid.scss';
 
-const Grid = ({ syllabary, kanaType }) => {
+const KanaGrid = ({ syllabary, kanaType }) => {
   const rows = syllabary.map(({ id, syllables }) => (
     <Row key={id} syllables={syllables} kanaType={kanaType} />
   ));
   return (
-    <>
-      <p className="text-center">Double-cliquez sur une case pour afficher la prononciation !</p>
-      <table className="grid border">
-        {rows}
+    <div className="kanagrid">
+      <p className="kanagrid__helper">Double-cliquez sur une case pour afficher la prononciation !</p>
+      <table className="kanagrid__table">
+        <tbody>
+          {rows}
+        </tbody>
       </table>
-    </>
+    </div>
   );
 };
 
-Grid.propTypes = {
+KanaGrid.propTypes = {
   syllabary: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -27,4 +30,4 @@ Grid.propTypes = {
   kanaType: PropTypes.string.isRequired,
 };
 
-export default Grid;
+export default KanaGrid;

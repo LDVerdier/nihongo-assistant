@@ -11,7 +11,7 @@ const Row = ({ syllables, kanaType }) => {
     <Cell key={syllable.id} symbol={syllable[kanaType]} pronunciation={syllable.pronunciation} />
   ));
   return (
-    <tr className="border">
+    <tr className="kanagrid__row">
       {cells}
     </tr>
   );
