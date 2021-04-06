@@ -39,7 +39,7 @@ function NihongoAssistant() {
         />
         <Route
           path="/entrainement"
-          render={() => <Quiz syllabary={syllabary} />}
+          render={() => <Quiz />}
         />
       </div>
       <Footer />
