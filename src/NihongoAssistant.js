@@ -10,6 +10,9 @@ import Footer from './components/Footer';
 import './assets/css/bootstrap.min.css';
 import './styles/index.scss';
 import syllabary from './data/Syllabary';
+import kana from './services/kana';
+
+// console.log(kana.getKanaById(5)['katakana']);
 
 function NihongoAssistant() {
   return (

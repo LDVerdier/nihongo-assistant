@@ -61,11 +61,9 @@ export const getArrayOfRandomKanas = (number = 5) => () => {
   let kanaArray = getKanasAsArray();
   while (randomKanas.length < number) {
     const newKana = kanaArray[getRandomInt(kanaArray.length)];
-    // console.log('longueur de KanaArray : ' + kanaArray.length);
     kanaArray = arrayRemove(kanaArray, newKana);
     randomKanas.push(newKana);
   }
-  console.log(randomKanas);
   return randomKanas;
 };
 
