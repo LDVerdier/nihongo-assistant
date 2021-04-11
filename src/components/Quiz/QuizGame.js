@@ -6,7 +6,6 @@ import kana from '../../services/kana';
 
 // == Composant
 const QuizGame = ({ options: { kanaType, quizLength } }) => {
-  console.log(kanaType, quizLength);
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [gameIsStarted, setGameIsStarted] = useState(false);
@@ -63,10 +62,18 @@ const QuizGame = ({ options: { kanaType, quizLength } }) => {
   };
 
   return (
-    <>
-      {!gameIsStarted && !gameIsFinished && (<button type="button" onClick={startQuiz}>Play !</button>)}
+    <div className="quiz__game">
+      {!gameIsStarted && !gameIsFinished && (
+        <button
+          type="button"
+          onClick={startQuiz}
+          className="quiz__game__button"
+        >
+          Démarrer !
+        </button>
+      )}
       {gameIsStarted && !gameIsFinished && (
-        <div className="quiz__game">
+        <>
           <p className="quiz__game__counter">Question {currentQuestionIndex + 1} / {quizQuestions.length} :</p>
           <div className="quiz__game__question">
             {quizQuestions[currentQuestionIndex][kanaType]}
@@ -84,17 +91,23 @@ const QuizGame = ({ options: { kanaType, quizLength } }) => {
               ))
             }
           </div>
-        </div>
-      )}
-      {gameIsFinished && (
-        <>
-          <div>
-            Terminé ! {correctAnswersCounter} bonne(s) réponse(s) sur {quizQuestions.length} !
-          </div>
-          <button type="button" onClick={reStartQuiz}>Rejouer ?</button>
         </>
       )}
-    </>
+      {gameIsFinished && (
+        <div className="quiz__game__result">
+          <h3 className="quiz__game__result__heading">
+            Terminé ! {correctAnswersCounter} bonne(s) réponse(s) sur {quizQuestions.length} !
+          </h3>
+          <button
+            type="button"
+            onClick={reStartQuiz}
+            className="quiz__game__button"
+          >
+            Rejouer ?
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
 

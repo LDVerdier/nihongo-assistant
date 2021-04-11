@@ -4,44 +4,164 @@
   margin-left: auto;
   margin-right: auto;
   padding: 3rem;
-  text-align: center;
   width: 100%;
+  
 
   @media (min-width: vars.$breakpoint-md) {
+    width: 75%;
+  }
+  @media (min-width: vars.$breakpoint-lg) {
     width: 50%;
   }
 
   &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
     margin-bottom: 2.5rem;
-  }
+    
+    &__heading {
+      display: inline-block;
+    }
 
-  &__options {
+    &__button {
+      background-color: vars.$color-grey;
+      width: 3rem;
+      height: 3rem;
+      border:2px black solid;
+      border-radius: 10px;
 
+      &--close {
+        background-color: green;
+      }
+    }
   }
 
   &__game {
-    width: 50%;
+    // width: 50%;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
     margin: 1rem auto;
-    border: 1px black solid;
-    padding: 1rem;
+    font-weight: bold;
+
+    &__counter {
+      text-align: left;
+    }
 
     &__question {
-      border: 1px red solid;
-      margin-bottom: 1rem;
+      border: 1px darkgrey solid;
+      border-radius: 10px;
       padding: 1rem;
+      margin: 0 auto 2rem auto;
+      width: 25%;
+      min-width: 3em;
+      font-size: 4em;
     }
 
     &__answer-group {
-      border: 1px darkgreen solid;
-      padding: .5rem;
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      justify-content: center;
+      
+
+      @media (min-width: vars.$breakpoint-md) {
+        flex-direction: row;
+        justify-content: space-around;
+      }
     }
 
     &__answer {
-      border: 1px chartreuse solid;
-      color: green;
+      border: 1px darkgrey solid;
+      border-radius: 10px;
       padding: .5rem 1rem;
+      font-size: 3em;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lightgray;
+      }
+
+      @media (min-width: vars.$breakpoint-md) {
+        width: 25%;
+      }
+      @media (min-width: vars.$breakpoint-lg) {
+        width: 30%;
+      }
+
+    }
+
+    &__button {
+      border: 1px darkgrey solid;
+      border-radius: 10px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    &__result {
+
+      &__heading {
+        margin-bottom: 2rem;
+        font-weight: bold;
+        font-size: 1.8em;
+      }
+    }
+  }
+
+  &__options {
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 2rem;
+    
+
+    &__field {
+      border: 1px darkgrey solid;
+      border-radius: 10px;
+      padding: 1rem;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__option-group {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: vars.$breakpoint-sm) {
+        flex-direction: row;
+      }
+
+      &__item {
+        border: 1px darkgrey solid;
+        border-radius: 10px;
+        padding: 0.5rem;
+        min-width: 3rem;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        cursor: pointer;
+
+        @media (min-width: vars.$breakpoint-sm) {
+          margin-bottom: 0;
+        }
+
+        &:not(:last-child) {
+          margin-right: 0.5rem;
+        }
+
+        &--selected {
+          border: 3px darkgrey solid;
+        }
+      }
     }
   }
 }
