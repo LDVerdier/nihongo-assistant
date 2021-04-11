@@ -1,4 +1,5 @@
 import syllabary from '../data/Syllabary';
+
 import {
   getRandomInt, shuffle, getRandomElementOfArray, arrayRemove
 } from '../assets/js/utils';

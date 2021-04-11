@@ -9,8 +9,6 @@ import Footer from './components/Footer';
 
 import './assets/css/bootstrap.min.css';
 import './styles/index.scss';
-import syllabary from './data/Syllabary';
-import kana from './services/kana';
 
 // console.log(kana.getKanaById(5)['katakana']);
 
@@ -26,11 +24,11 @@ function NihongoAssistant() {
         />
         <Route
           path="/hiragana"
-          render={() => <KanaGrid syllabary={syllabary} kanaType="hiragana" />}
+          render={() => <KanaGrid kanaType="hiragana" />}
         />
         <Route
           path="/katakana"
-          render={() => <KanaGrid syllabary={syllabary} kanaType="katakana" />}
+          render={() => <KanaGrid kanaType="katakana" />}
         />
         <Route
           path="/kanji"
