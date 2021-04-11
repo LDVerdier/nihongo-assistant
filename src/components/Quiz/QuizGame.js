@@ -5,7 +5,8 @@ import { getRandomInt, shuffle } from '../../assets/js/utils';
 import kana from '../../services/kana';
 
 // == Composant
-const QuizGame = () => {
+const QuizGame = ({ options: { kanaType, quizLength } }) => {
+  console.log(kanaType, quizLength);
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [gameIsStarted, setGameIsStarted] = useState(false);
@@ -13,10 +14,9 @@ const QuizGame = () => {
   const [correctAnswersCounter, setCorrectAnswersCounter] = useState(0);
 
   const startQuiz = () => {
-    const newQuizQuestions = kana.getArrayOfRandomKanas();
+    const newQuizQuestions = kana.getArrayOfRandomKanas(quizLength);
     setQuizQuestions(newQuizQuestions);
     setGameIsStarted(true);
-    
     // const arrayOfAnswers = getArrayOfAnswers(questionKana);
   };
 
@@ -64,12 +64,12 @@ const QuizGame = () => {
 
   return (
     <>
-      <button type="button" onClick={startQuiz}>Play !</button>
+      {!gameIsStarted && !gameIsFinished && (<button type="button" onClick={startQuiz}>Play !</button>)}
       {gameIsStarted && !gameIsFinished && (
         <div className="quiz__game">
           <p className="quiz__game__counter">Question {currentQuestionIndex + 1} / {quizQuestions.length} :</p>
           <div className="quiz__game__question">
-            {quizQuestions[currentQuestionIndex].katakana}
+            {quizQuestions[currentQuestionIndex][kanaType]}
           </div>
           <div className="quiz__game__answer-group">
             {
