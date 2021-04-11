@@ -1,5 +1,6 @@
 // == Import npm
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { getRandomInt, shuffle } from '../../assets/js/utils';
 import kana from '../../services/kana';
@@ -112,6 +113,10 @@ const QuizGame = ({ options: { kanaType, quizLength } }) => {
 };
 
 QuizGame.propTypes = {
+  options: PropTypes.shape({
+    kanaType: PropTypes.string.isRequired,
+    quizLength: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 // == Export

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Options = ({ options, setOptions }) => {
   const [possibleOptions] = useState({
@@ -12,7 +13,7 @@ const Options = ({ options, setOptions }) => {
     setOptions(newOptions);
   };
   const handleQuizLengthClick = (event) => {
-    const newQuizLength = event.target.textContent;
+    const newQuizLength = parseInt(event.target.textContent, 10);
     const newOptions = { ...options, quizLength: newQuizLength };
     setOptions(newOptions);
   };
@@ -48,7 +49,15 @@ const Options = ({ options, setOptions }) => {
         </div>
       </div>
     </div>
-  )
+  );
+};
+
+Options.propTypes = {
+  options: PropTypes.shape({
+    kanaType: PropTypes.string.isRequired,
+    quizLength: PropTypes.number.isRequired,
+  }).isRequired,
+  setOptions: PropTypes.func.isRequired,
 };
 
 export default Options;
