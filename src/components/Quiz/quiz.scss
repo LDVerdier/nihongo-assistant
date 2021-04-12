@@ -74,7 +74,7 @@
     }
 
     &__answer {
-      border: 1px darkgrey solid;
+      border: 3px darkgrey solid;
       border-radius: 10px;
       padding: .5rem 1rem;
       font-size: 3em;
@@ -84,6 +84,7 @@
 
       &:hover {
         background-color: lightgray;
+        border-color: black;
       }
 
       @media (min-width: vars.$breakpoint-md) {
@@ -91,6 +92,16 @@
       }
       @media (min-width: vars.$breakpoint-lg) {
         width: 30%;
+      }
+
+      &--correct, &--correct:hover {
+        border-color: green;
+        background-color: lightgreen;
+      }
+
+      &--wrong, &--wrong:hover{
+        border-color: darkred;
+        background-color: orange;
       }
 
     }

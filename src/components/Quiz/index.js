@@ -31,13 +31,14 @@ const Quiz = () => {
           {hideOptions ? <BsFillGearFill /> : <MdDone />}
         </button>
       </div>
-      {/* <button type="button" >Options</button> */}
-      {!hideOptions && (
-        <Options options={options} setOptions={setOptions} />
-      )}
-      {hideOptions && (
-      <QuizGame options={options} />
-      )}
+      <div className="quizz__content">
+        {!hideOptions && (
+          <Options options={options} setOptions={setOptions} />
+        )}
+        {hideOptions && (
+        <QuizGame options={options} />
+        )}
+      </div>
     </div>
   );
 };

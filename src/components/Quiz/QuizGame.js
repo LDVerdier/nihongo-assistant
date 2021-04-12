@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { getRandomInt, shuffle } from '../../assets/js/utils';
 import kana from '../../services/kana';
 
+import QuizAnswer from './QuizAnswer';
+
 // == Composant
 const QuizGame = ({ options: { kanaType, quizLength } }) => {
   const [quizQuestions, setQuizQuestions] = useState([]);
@@ -82,13 +84,13 @@ const QuizGame = ({ options: { kanaType, quizLength } }) => {
           <div className="quiz__game__answer-group">
             {
               getArrayOfAnswers(quizQuestions[currentQuestionIndex]).map((answerElement) => (
-                <div
+                <QuizAnswer
                   key={answerElement.id}
-                  className="quiz__game__answer"
-                  onClick={handleAnswerClick}
-                >
-                  {answerElement.pronunciation}
-                </div>
+                  selectAnswer={handleAnswerClick}
+                  pronunciation={answerElement.pronunciation}
+                  // eslint-disable-next-line max-len
+                  isCorrectAnswer={quizQuestions[currentQuestionIndex].pronunciation === answerElement.pronunciation}
+                />
               ))
             }
           </div>
