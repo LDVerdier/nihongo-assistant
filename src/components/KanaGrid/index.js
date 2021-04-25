@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import Row from '../Row';
 import './kanagrid.scss';
-import kana from '../../services/kana';
+// import kana from '../../services/kana';
 
-const KanaGrid = ({ kanaType }) => {
-  const series = kana.getRawData().map(({ id, syllables }) => (
+const KanaGrid = ({ kanaType, kana }) => {
+  const series = kana.map(({ id, syllables }) => (
     <Row key={id} syllables={syllables} kanaType={kanaType} />
   ));
   return (
@@ -23,6 +23,12 @@ const KanaGrid = ({ kanaType }) => {
 
 KanaGrid.propTypes = {
   kanaType: PropTypes.string.isRequired,
+  kana: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      syllables: PropTypes.array.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default KanaGrid;
