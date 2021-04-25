@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import KanaGrid from './containers/KanaGrid';
-import Quiz from './components/Quiz';
+import Quiz from './containers/Quiz';
 import Footer from './components/Footer';
 
 import './assets/css/bootstrap.min.css';

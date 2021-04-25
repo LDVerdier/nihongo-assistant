@@ -8,10 +8,4 @@ const mapStateToProps = (state, ownProps) => ({
   kana: state.kanas.list,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-//   props: () => {
-//     dispatch(props());
-//   },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(KanaGrid);
+export default connect(mapStateToProps, null)(KanaGrid);

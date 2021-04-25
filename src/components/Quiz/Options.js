@@ -1,21 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const Options = ({ options, setOptions }) => {
-  const [possibleOptions] = useState({
-    kanaTypes: ['hiragana', 'katakana'],
-    quizLengths: [5, 10, 20, 30, 46],
-  });
+const Options = ({
+  currentOptions, availableOptions, updateOptions,
+}) => {
+  // const [possibleOptions] = useState({
+  //   kanaTypes: ['hiragana', 'katakana'],
+  //   quizLengths: [5, 10, 20, 30, 46],
+  // });
 
+  // const handleKanaTypeClick = (event) => {
+  //   const newKanaType = event.target.textContent;
+  //   const newOptions = { ...currentOptions, kanaType: newKanaType };
+  //   setOptions(newOptions);
+  // };
   const handleKanaTypeClick = (event) => {
     const newKanaType = event.target.textContent;
-    const newOptions = { ...options, kanaType: newKanaType };
-    setOptions(newOptions);
+    updateOptions(newKanaType, 'kanaType');
   };
+
+  // const handleQuizLengthClick = (event) => {
+  //   const newQuizLength = parseInt(event.target.textContent, 10);
+  //   const newOptions = { ...currentOptions, quizLength: newQuizLength };
+  //   setOptions(newOptions);
+  // };
   const handleQuizLengthClick = (event) => {
     const newQuizLength = parseInt(event.target.textContent, 10);
-    const newOptions = { ...options, quizLength: newQuizLength };
-    setOptions(newOptions);
+    updateOptions(newQuizLength, 'quizLength');
   };
 
   return (
@@ -23,10 +34,10 @@ const Options = ({ options, setOptions }) => {
       <div className="quiz__options__field">
         <h4 className="quiz__options__title">Type de Kana</h4>
         <div className="quiz__options__option-group">
-          {possibleOptions.kanaTypes.map((kanaType) => (
+          {availableOptions.kanaTypes.map((kanaType) => (
             <div
               key={kanaType}
-              className={`quiz__options__option-group__item ${kanaType === options.kanaType ? 'quiz__options__option-group__item--selected' : ''}`}
+              className={`quiz__options__option-group__item ${kanaType === currentOptions.kanaType ? 'quiz__options__option-group__item--selected' : ''}`}
               onClick={handleKanaTypeClick}
             >
               {kanaType}
@@ -37,10 +48,10 @@ const Options = ({ options, setOptions }) => {
       <div className="quiz__options__field">
         <h4 className="quiz__options__title">Nombre de questions</h4>
         <div className="quiz__options__option-group">
-          {possibleOptions.quizLengths.map((quizLength) => (
+          {availableOptions.quizLengths.map((quizLength) => (
             <div
               key={quizLength}
-              className={`quiz__options__option-group__item ${quizLength === parseInt(options.quizLength, 10) ? 'quiz__options__option-group__item--selected' : ''}`}
+              className={`quiz__options__option-group__item ${quizLength === parseInt(currentOptions.quizLength, 10) ? 'quiz__options__option-group__item--selected' : ''}`}
               onClick={handleQuizLengthClick}
             >
               {quizLength}
@@ -53,11 +64,19 @@ const Options = ({ options, setOptions }) => {
 };
 
 Options.propTypes = {
-  options: PropTypes.shape({
+  currentOptions: PropTypes.shape({
     kanaType: PropTypes.string.isRequired,
     quizLength: PropTypes.number.isRequired,
   }).isRequired,
-  setOptions: PropTypes.func.isRequired,
+  availableOptions: PropTypes.shape({
+    kanaTypes: PropTypes.arrayOf(
+      PropTypes.string.isRequired,
+    ).isRequired,
+    quizLengths: PropTypes.arrayOf(
+      PropTypes.number.isRequired,
+    ).isRequired,
+  }).isRequired,
+  updateOptions: PropTypes.func.isRequired,
 };
 
 export default Options;

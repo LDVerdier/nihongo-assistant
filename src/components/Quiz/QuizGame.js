@@ -6,7 +6,7 @@ import { getRandomInt, shuffle } from '../../assets/js/utils';
 import kana from '../../services/kana';
 
 // == Composant
-const QuizGame = ({ options: { kanaType, quizLength } }) => {
+const QuizGame = ({ currentOptions: { kanaType, quizLength } }) => {
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [gameIsStarted, setGameIsStarted] = useState(false);
@@ -113,7 +113,7 @@ const QuizGame = ({ options: { kanaType, quizLength } }) => {
 };
 
 QuizGame.propTypes = {
-  options: PropTypes.shape({
+  currentOptions: PropTypes.shape({
     kanaType: PropTypes.string.isRequired,
     quizLength: PropTypes.number.isRequired,
   }).isRequired,
