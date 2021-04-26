@@ -28,8 +28,9 @@ export const initiateSlides = () => ({
 export const SET_SLIDE_TO_ANSWERED = 'SET_SLIDE_TO_ANSWERED';
 
 // action creator setSlideToAnswered
-export const setSlideToAnswered = () => ({
+export const setSlideToAnswered = (isCorrect) => ({
   type: SET_SLIDE_TO_ANSWERED,
+  isCorrect,
 });
 
 // action type INCREMENT_SLIDE_COUNT
@@ -38,4 +39,12 @@ export const INCREMENT_SLIDE_COUNT = 'INCREMENT_SLIDE_COUNT';
 // action creator incrementSlideCount
 export const incrementSlideCount = () => ({
   type: INCREMENT_SLIDE_COUNT,
+});
+
+// action type CLEAR_QUIZ
+export const CLEAR_QUIZ = 'CLEAR_QUIZ';
+
+// action creator clearQuiz
+export const clearQuiz = () => ({
+  type: CLEAR_QUIZ,
 });

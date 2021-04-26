@@ -7,6 +7,7 @@ const mapStateToProps = (state) => ({
   currentOptions: state.quiz.currentOptions,
   hasStarted: state.quiz.hasStarted,
   hasFinished: state.quiz.hasFinished,
+  goodAnswers: state.quiz.goodAnswers,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -14,7 +15,6 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(initiateSlides());
   },
   incrementSlideCount: () => {
-    console.log('increment');
     dispatch(incrementSlideCount());
   },
 });

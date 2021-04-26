@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BsFillGearFill } from 'react-icons/bs';
 import { MdDone } from 'react-icons/md';
@@ -7,16 +7,15 @@ import Options from 'src/containers/Quiz/Options';
 import QuizGame from 'src/containers/Quiz/QuizGame';
 // import QuizGame from './QuizGame';
 
-const Quiz = ({ hideOptions, toggleOptions }) => {
-  // const [hideOptions, setHideOptions] = useState(true);
-  const [options, setOptions] = useState({
-    kanaType: 'hiragana',
-    quizLength: 5,
-  });
-
+const Quiz = ({ hideOptions, toggleOptions, clearQuiz }) => {
   const handleOptionsClick = () => {
     toggleOptions();
   };
+
+  useEffect(() => {
+    clearQuiz();
+  },
+  []);
 
   return (
     <div className="quiz">
@@ -38,7 +37,7 @@ const Quiz = ({ hideOptions, toggleOptions }) => {
         <Options />
       )}
       {hideOptions && (
-      <QuizGame options={options} />
+      <QuizGame />
       )}
     </div>
   );
@@ -49,4 +48,5 @@ export default Quiz;
 Quiz.propTypes = {
   hideOptions: PropTypes.bool.isRequired,
   toggleOptions: PropTypes.func.isRequired,
+  clearQuiz: PropTypes.func.isRequired,
 };

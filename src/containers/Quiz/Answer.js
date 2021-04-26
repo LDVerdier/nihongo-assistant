@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Answer from 'src/components/Quiz/Answer';
-import { setSlideToAnswered } from 'src/actions/quiz';
+import { setSlideToAnswered, incrementSlideCount } from 'src/actions/quiz';
 
 const mapStateToProps = (state, ownProps) => ({
   answer: ownProps.answer,
@@ -10,9 +10,12 @@ const mapStateToProps = (state, ownProps) => ({
     .wasAnswered,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  setSlideToAnswered: () => {
-    dispatch(setSlideToAnswered());
+const mapDispatchToProps = (dispatch) => ({
+  setSlideToAnswered: (isCorrect) => {
+    dispatch(setSlideToAnswered(isCorrect));
+  },
+  incrementSlideCount: () => {
+    dispatch(incrementSlideCount());
   },
 });
 

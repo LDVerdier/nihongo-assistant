@@ -1,6 +1,11 @@
 import { generateSlides } from 'src/selectors';
 import {
-  TOGGLE_OPTIONS, UPDATE_OPTIONS, INITIATE_SLIDES, SET_SLIDE_TO_ANSWERED, INCREMENT_SLIDE_COUNT
+  TOGGLE_OPTIONS,
+  UPDATE_OPTIONS,
+  INITIATE_SLIDES,
+  SET_SLIDE_TO_ANSWERED,
+  INCREMENT_SLIDE_COUNT,
+  CLEAR_QUIZ,
 } from '../actions/quiz';
 
 export const initialState = {
@@ -17,6 +22,7 @@ export const initialState = {
   currentSlideIndex: 0,
   hasStarted: false,
   hasFinished: false,
+  goodAnswers: 0,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -35,11 +41,13 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
     case INITIATE_SLIDES:
-      console.log(generateSlides(state.currentOptions.quizLength));
       return {
         ...state,
         slides: generateSlides(state.currentOptions.quizLength),
         hasStarted: true,
+        hasFinished: false,
+        currentSlideIndex: 0,
+        goodAnswers: 0,
       };
     case SET_SLIDE_TO_ANSWERED: {
       const newSlides = state.slides.map((slide, index) => {
@@ -54,12 +62,23 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         slides: newSlides,
+        goodAnswers: action.isCorrect ? state.goodAnswers + 1 : state.goodAnswers,
       };
     }
     case INCREMENT_SLIDE_COUNT:
       return {
         ...state,
         currentSlideIndex: state.currentSlideIndex + 1,
+        hasFinished: state.currentSlideIndex >= state.slides.length - 1,
+      };
+    case CLEAR_QUIZ:
+      return {
+        ...state,
+        currentSlideIndex: 0,
+        hasStarted: false,
+        hasFinished: false,
+        slides: [],
+        goodAnswers: 0,
       };
 
     default:

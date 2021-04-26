@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
 import Quiz from 'src/components/Quiz';
-import { toggleOptions } from 'src/actions/quiz';
+import { toggleOptions, clearQuiz } from 'src/actions/quiz';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   hideOptions: state.quiz.hideOptions,
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   toggleOptions: () => {
     dispatch(toggleOptions());
+  },
+  clearQuiz: () => {
+    dispatch(clearQuiz());
   },
 });
 
