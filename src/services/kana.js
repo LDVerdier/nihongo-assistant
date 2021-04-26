@@ -6,16 +6,24 @@ import {
 
 const kana = (() => {
   const data = syllabary;
-
+  /**
+   * Returns the full syllabary as is
+   */
   const getRawData = () => data;
 
+  /**
+   * Returns all the non-empty kanas as an array of objects
+   */
   const getKanasAsArray = () => {
     const kanaArray = syllabary.map((serie) => serie.syllables) // get all sub arrays of syllables
       .flat() // extract all syllables within all arrays
       .filter((currentKana) => currentKana.pronunciation !== ''); // filter empty syllables
     return kanaArray;
   };
-
+  /**
+   * Returns an array of kana objects chosen randomly, no duplicate
+   * @param {Number} number
+   */
   const getArrayOfRandomKanas = (number = 5) => {
     const randomKanas = [];
     let kanaArray = getKanasAsArray();
@@ -26,24 +34,30 @@ const kana = (() => {
     }
     return randomKanas;
   };
-
+  /**
+   * Returns a random non-empty kana
+   */
   const getRandomKana = () => {
     const kanaArray = getKanasAsArray();
     return kanaArray[getRandomInt(kanaArray.length)];
   };
 
+  /**
+   * Returns an array of all non-empty kana's ids
+   */
   const getAllKanaId = () => {
     const kanaArray = getKanasAsArray();
     const allKanaId = kanaArray.map((kanaItem) => kanaItem.id);
     return allKanaId;
   };
 
+  /**
+   * Returns the kana object matching the given id
+   * @param {Number} id
+   */
   const getKanaById = (id) => {
-    // console.log(id);
     const kanaList = getKanasAsArray();
-    // console.log(kanaList);
     const foundKana = kanaList.find((kanaItem) => kanaItem.id === id);
-    // console.log(foundKana);
     return foundKana;
   };
 

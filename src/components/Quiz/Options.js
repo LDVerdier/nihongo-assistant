@@ -4,26 +4,11 @@ import PropTypes from 'prop-types';
 const Options = ({
   currentOptions, availableOptions, updateOptions,
 }) => {
-  // const [possibleOptions] = useState({
-  //   kanaTypes: ['hiragana', 'katakana'],
-  //   quizLengths: [5, 10, 20, 30, 46],
-  // });
-
-  // const handleKanaTypeClick = (event) => {
-  //   const newKanaType = event.target.textContent;
-  //   const newOptions = { ...currentOptions, kanaType: newKanaType };
-  //   setOptions(newOptions);
-  // };
   const handleKanaTypeClick = (event) => {
     const newKanaType = event.target.textContent;
     updateOptions(newKanaType, 'kanaType');
   };
 
-  // const handleQuizLengthClick = (event) => {
-  //   const newQuizLength = parseInt(event.target.textContent, 10);
-  //   const newOptions = { ...currentOptions, quizLength: newQuizLength };
-  //   setOptions(newOptions);
-  // };
   const handleQuizLengthClick = (event) => {
     const newQuizLength = parseInt(event.target.textContent, 10);
     updateOptions(newQuizLength, 'quizLength');

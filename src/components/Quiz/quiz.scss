@@ -93,6 +93,12 @@
         width: 30%;
       }
 
+      &--display-right {
+        background-color: lightgreen;
+      }
+      &--display-wrong {
+        background-color: lightsalmon;
+      }
     }
 
     &__button {

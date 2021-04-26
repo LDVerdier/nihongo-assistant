@@ -1,12 +1,18 @@
 // == Import npm
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Slide from 'src/containers/Quiz/Slide';
 
 import { getRandomInt, shuffle } from '../../assets/js/utils';
 import kana from '../../services/kana';
 
 // == Composant
-const QuizGame = ({ currentOptions: { kanaType, quizLength } }) => {
+const QuizGame = ({
+  currentOptions: { kanaType, quizLength },
+  initiateSlides,
+  hasStarted,
+  hasFinished,
+}) => {
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [gameIsStarted, setGameIsStarted] = useState(false);
@@ -17,6 +23,7 @@ const QuizGame = ({ currentOptions: { kanaType, quizLength } }) => {
     const newQuizQuestions = kana.getArrayOfRandomKanas(quizLength);
     setQuizQuestions(newQuizQuestions);
     setGameIsStarted(true);
+    initiateSlides();
     // const arrayOfAnswers = getArrayOfAnswers(questionKana);
   };
 
@@ -74,25 +81,7 @@ const QuizGame = ({ currentOptions: { kanaType, quizLength } }) => {
         </button>
       )}
       {gameIsStarted && !gameIsFinished && (
-        <>
-          <p className="quiz__game__counter">Question {currentQuestionIndex + 1} / {quizQuestions.length} :</p>
-          <div className="quiz__game__question">
-            {quizQuestions[currentQuestionIndex][kanaType]}
-          </div>
-          <div className="quiz__game__answer-group">
-            {
-              getArrayOfAnswers(quizQuestions[currentQuestionIndex]).map((answerElement) => (
-                <div
-                  key={answerElement.id}
-                  className="quiz__game__answer"
-                  onClick={handleAnswerClick}
-                >
-                  {answerElement.pronunciation}
-                </div>
-              ))
-            }
-          </div>
-        </>
+        <Slide />
       )}
       {gameIsFinished && (
         <div className="quiz__game__result">
@@ -117,6 +106,7 @@ QuizGame.propTypes = {
     kanaType: PropTypes.string.isRequired,
     quizLength: PropTypes.number.isRequired,
   }).isRequired,
+  initiateSlides: PropTypes.func.isRequired,
 };
 
 // == Export
